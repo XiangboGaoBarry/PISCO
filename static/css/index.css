@@ -11,7 +11,8 @@ body {
   font-family: 'Inter', 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
-  overflow-x: hidden; /* Prevent horizontal scroll */
+  overflow-x: hidden;
+  /* Prevent horizontal scroll */
   line-height: 1.6;
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   min-height: 100vh;
@@ -20,7 +21,8 @@ body {
 /* Fixed cover image that stays in view while scrolling */
 .cover-image {
   width: 100%;
-  height: 100vh; /* Full viewport height */
+  height: 100vh;
+  /* Full viewport height */
   position: relative;
   margin: 0;
   padding: 0;
@@ -44,11 +46,11 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(to top, 
-    rgba(245, 247, 250, 1) 0%, 
-    rgba(245, 247, 250, 0.9) 30%, 
-    rgba(245, 247, 250, 0.6) 60%, 
-    rgba(245, 247, 250, 0) 100%);
+  background: linear-gradient(to top,
+      rgba(245, 247, 250, 1) 0%,
+      rgba(245, 247, 250, 0.9) 30%,
+      rgba(245, 247, 250, 0.6) 60%,
+      rgba(245, 247, 250, 0) 100%);
   height: 120px;
   margin: 0;
   padding: 0;
@@ -57,7 +59,8 @@ body {
 
 /* Initial view container - controls how much of image is initially visible */
 .initial-view {
-  height: 20vh; /* Initial visible height */
+  height: 20vh;
+  /* Initial visible height */
   position: relative;
   overflow: hidden;
   transition: height 0.5s ease;
@@ -76,18 +79,21 @@ body {
 
 /* Override Bulma section spacing */
 .section {
-  padding: 0 !important; /* Override Bulma's default padding */
+  padding: 0 !important;
+  /* Override Bulma's default padding */
 }
 
 .section.is-light {
   background: transparent;
-  margin: 0; /* No margin */
+  margin: 0;
+  /* No margin */
   padding: 60px 0 80px 0 !important;
 }
 
 /* Custom spacing for content */
-.section.is-light > .columns:first-child {
-  padding-top: 20px; /* Add spacing inside first content section */
+.section.is-light>.columns:first-child {
+  padding-top: 20px;
+  /* Add spacing inside first content section */
 }
 
 .main-title {
@@ -117,9 +123,11 @@ body {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
@@ -162,11 +170,50 @@ body {
   transition: all 0.3s ease;
   transform: translateY(0);
   box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  /* Better text wrapping for long buttons */
+  white-space: normal;
+  height: auto;
+  line-height: 1.2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 48px;
+  /* Ensure consistency */
+}
+
+/* Specific button colors */
+.link-block .button.is-paper {
+  background: linear-gradient(135deg, #363636 0%, #5e5e5e 100%);
+  box-shadow: 0 4px 15px rgba(54, 54, 54, 0.3);
+}
+
+.link-block .button.is-code {
+  background: linear-gradient(135deg, #243949 0%, #517fa4 100%);
+  box-shadow: 0 4px 15px rgba(36, 57, 73, 0.3);
+}
+
+.link-block .button.is-model {
+  background: linear-gradient(135deg, #FF512F 0%, #DD2476 100%);
+  box-shadow: 0 4px 15px rgba(221, 36, 118, 0.3);
 }
 
 .link-block .button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+  /* Enhance shadow on hover based on color */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.link-block .button.is-paper:hover {
+  box-shadow: 0 8px 25px rgba(54, 54, 54, 0.4);
+}
+
+.link-block .button.is-code:hover {
+  box-shadow: 0 8px 25px rgba(36, 57, 73, 0.4);
+}
+
+.link-block .button.is-model:hover {
+  box-shadow: 0 8px 25px rgba(221, 36, 118, 0.4);
 }
 
 /* Video containers */
@@ -176,9 +223,11 @@ body {
   border-radius: 15px;
   transition: transform 0.3s ease;
 }
+
 .video-container:hover {
   transform: translateY(-5px);
 }
+
 .video-container video {
   width: 100%;
   border-radius: 15px;
@@ -397,9 +446,17 @@ body {
 }
 
 @keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* Video Grid Section */
@@ -418,7 +475,7 @@ body {
   right: 0;
   bottom: 0;
   background: radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-              radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
   z-index: 1;
 }
 
@@ -522,7 +579,7 @@ body {
   padding: 80px 0 !important;
 }
 
-.card-section .container > .columns > .column {
+.card-section .container>.columns>.column {
   background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(15px);
   border-radius: 25px;
@@ -533,7 +590,7 @@ body {
   transition: transform 0.3s ease;
 }
 
-.card-section .container > .columns > .column:hover {
+.card-section .container>.columns>.column:hover {
   transform: translateY(-10px);
 }
 
@@ -696,12 +753,19 @@ body {
 }
 
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
     transform: translateY(0) translateX(-50%);
   }
+
   40% {
     transform: translateY(-15px) translateX(-50%);
   }
+
   60% {
     transform: translateY(-7px) translateX(-50%);
   }
@@ -713,6 +777,7 @@ body {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -725,9 +790,12 @@ body {
 
 /* Add subtle floating animation to video containers */
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-10px);
   }
@@ -759,20 +827,20 @@ body {
   .main-title {
     font-size: 2.5rem;
   }
-  
+
   .subtitle {
     font-size: 2rem;
   }
-  
+
   .sub-sub-title {
     font-size: 1.8rem;
   }
-  
+
   .container.is-max-desktop,
   .container.is-width-screen {
     padding: 0 20px;
   }
-  
+
   .gif-preview {
     max-width: 250px;
   }
