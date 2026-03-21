@@ -1,540 +1,244 @@
 <div class="content-wrapper">
-  <section id="results" class="section is-light hero-section">
-    <!-- Title -->
-    <div class="columns is-centered">
-      <div class="column has-text-centered">
-        <div class="subtitle">
-          <!-- <img src="./static/images/icon.png" alt="icon" style="height: 5em; vertical-align: middle; margin-right: 8px;"> -->
-          <span class="main-title gradient-colorful">PISCO:</span> <span
-            style="text-decoration: underline;">P</span>recise Video Instance <span
-            style="text-decoration: underline;">I</span>nsertion <br> with <span
-            style="text-decoration: underline;">S</span>parse <span style="text-decoration: underline;">Co</span>ntrol
+    <!-- Hero Section -->
+    <section class="hero">
+        <p class="hero-overline">PISCO</p>
+        <h1>Precise Video Instance Insertion<br>with Sparse Control</h1>
+        <p class="hero-subtitle">High-fidelity object insertion with minimal user effort.</p>
+        
+        <div class="hero-links">
+            <a href="https://arxiv.org/abs/2602.08277" class="pill">Paper</a>
+            <a href="https://github.com/taco-group/PISCO" class="pill">Code</a>
+            <a href="https://github.com/XiangboGaoBarry/PISCO-Development-Tools" class="pill">Tools</a>
+            <a href="https://huggingface.co/xiangbog/PISCO-14B" class="pill">Model</a>
         </div>
-      </div>
-    </div>
+        
+        <p class="hero-authors">
+            <a href="https://www.xiangbogao.com/" class="author-link">Xiangbo Gao</a><sup>1</sup> &middot; Renjie Li<sup>1</sup> &middot; Xinghao Chen<sup>1</sup> &middot; Yuheng Wu<sup>3</sup> &middot; Suofei Feng<sup>4</sup> &middot; Qing Yin<sup>2</sup> &middot; <a href="https://taco-group.github.io/index.html" class="author-link">Zhengzhong Tu</a><sup>1</sup>
+        </p>
+        <p class="hero-affiliation"><sup>1</sup>Texas A&M University &nbsp; <sup>2</sup>Visko Platform &nbsp; <sup>3</sup>KAIST &nbsp; <sup>4</sup>Stanford University</p>
 
-    <!-- Conference & Authors -->
-    <div class="hero">
-      <!-- <div class="hero-body"> -->
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <div class="sub-sub-title gradient-colorful">
-              <!-- <a href="">CVPR 2024</a> -->
-            </div>
-            <!-- anonymity -->
-            <div class="is-size-5 publication-authors">
-              <span class="author-block">
-                <a href="https://www.xiangbogao.com/">Xiangbo Gao</a><sup>1</sup>,
-              </span>
-              <span class="author-block">
-                Renjie Li<sup>1</sup>,
-              </span>
-              <span class="author-block">
-                Xinghao Chen<sup>1</sup>,
-              </span>
-              <span class="author-block">
-                Yuheng Wu<sup>3</sup>,
-              </span>
-              <span class="author-block">
-                Suofei Feng<sup>4</sup>,
-              </span>
-              <span class="author-block">
-                Qing Yin<sup>2</sup>,
-              </span>
-              <span class="author-block">
-                <a href="https://taco-group.github.io/index.html">Zhengzhong Tu</a><sup>1</sup>
-              </span>
-            </div>
-            <div class="is-size-5 publication-authors">
-              <span class="author-block"><sup>1</sup>Texas A&M University</span>
-              <span class="author-block"><sup>2</sup>Visko Platform</span>
-              <span class="author-block"><sup>3</sup>KAIST</span>
-              <span class="author-block"><sup>4</sup>Stanford University</span>
+        <!-- Main Demo Video -->
+        <div class="hero-video-container">
+            <video id="pisco-demo" src="static/PISCO_demo.mp4" autoplay loop muted playsinline class="hero-video" title="Click to hear sound"></video>
+        </div>
+
+        <!-- Development Tool Video -->
+        <div class="hero-video-container">
+            <video id="dev-tool-video" src="static/dev_tool.mp4" autoplay loop muted playsinline controls class="hero-video"></video>
+        </div>
+    </section>
+
+    <!-- Abstract Section -->
+    <section class="section-dark">
+        <div class="container narrow">
+            <h2>Abstract</h2>
+            <p class="body-large">
+                The landscape of AI video generation is shifting towards fine-grained, controllable generation. 
+                We propose <strong>PISCO</strong>, a video diffusion model for precise video instance insertion with arbitrary sparse keyframe control.
+            </p>
+            <p class="body-large">
+                PISCO allows users to specify sparse keyframes at arbitrary timestamps, and automatically propagates object appearance, motion, and interaction while maintaining physical consistency.
+            </p>
+        </div>
+    </section>
+
+    <!-- Video Comparisons -->
+    <section class="section-light" id="video-demos">
+        <div class="container">
+            <div class="section-header">
+                <h2>Video Comparisons</h2>
+                <p class="section-subtitle">Slide to compare original footage with PISCO's insertion results.</p>
             </div>
 
-            <!-- Paper & Code Links -->
-            <div class="publication-links">
-              <span class="link-block">
-                <a href="https://arxiv.org/abs/2602.08277"
-                  class="external-link button is-normal is-rounded is-dark is-paper">
-                  <span class="icon">
-                    <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
-              </span>
+            <h3 class="comparison-title">Instance Insertion</h3>
+            <div class="demo-grid">
+                <!-- Row 1 -->
+                <div class="comparison-card">
+                    <div class="video-compare-container">
+                        <div class="video-wrapper">
+                            <video loop muted playsinline preload="metadata">
+                                <source src="static/demos/instance insertion/edited/boat_labubu.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="video-overlay">
+                            <video loop muted playsinline preload="metadata">
+                                <source src="static/demos/instance insertion/origin/boat_labubu.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="video-compare-slider"><div class="slider-handle"></div></div>
+                        <span class="compare-label label-left">Original</span>
+                        <span class="compare-label label-right">PISCO</span>
+                    </div>
+                </div>
 
-              <span class="link-block">
-                <a href="https://github.com/taco-group/PISCO"
-                  class="external-link button is-normal is-rounded is-dark is-code">
-                  <span class="icon">
-                    <i class="fab fa-github"></i>
-                  </span>
-                  <span>Code</span>
-                </a>
-              </span>
+                <div class="comparison-card">
+                    <div class="video-compare-container">
+                        <div class="video-wrapper">
+                            <video loop muted playsinline preload="metadata">
+                                <source src="static/demos/instance insertion/edited/light.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="video-overlay">
+                            <video loop muted playsinline preload="metadata">
+                                <source src="static/demos/instance insertion/origin/light.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="video-compare-slider"><div class="slider-handle"></div></div>
+                        <span class="compare-label label-left">Original</span>
+                        <span class="compare-label label-right">PISCO</span>
+                    </div>
+                </div>
 
-              <span class="link-block">
-                <a href="https://github.com/XiangboGaoBarry/PISCO-Development-Tools"
-                  class="external-link button is-normal is-rounded is-dark is-code">
-                  <span class="icon">
-                    <i class="fas fa-tools"></i>
-                  </span>
-                  <span>Development Tools</span>
-                </a>
-              </span>
+                <!-- Row 2 -->
+                <div class="comparison-card">
+                    <div class="video-compare-container">
+                        <div class="video-wrapper">
+                            <video loop muted playsinline preload="metadata">
+                                <source src="static/demos/instance insertion/edited/save_lotos.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="video-overlay">
+                            <video loop muted playsinline preload="metadata">
+                                <source src="static/demos/instance insertion/origin/save_lotos.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="video-compare-slider"><div class="slider-handle"></div></div>
+                        <span class="compare-label label-left">Original</span>
+                        <span class="compare-label label-right">PISCO</span>
+                    </div>
+                </div>
+
+                <div class="comparison-card">
+                    <div class="video-compare-container">
+                        <div class="video-wrapper">
+                            <video loop muted playsinline preload="metadata">
+                                <source src="static/demos/instance insertion/edited/the_trench_run.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="video-overlay">
+                            <video loop muted playsinline preload="metadata">
+                                <source src="static/demos/instance insertion/origin/the_trench_run.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="video-compare-slider"><div class="slider-handle"></div></div>
+                        <span class="compare-label label-left">Original</span>
+                        <span class="compare-label label-right">PISCO</span>
+                    </div>
+                </div>
             </div>
 
-            <div class="publication-links" style="margin-top: 20px;">
-              <span class="link-block">
-                <a href="https://huggingface.co/xiangbog/PISCO-14B"
-                  class="external-link button is-normal is-rounded is-dark is-model">
-                  <span class="icon">
-                    <i class="fas fa-brain"></i>
-                  </span>
-                  <span>Model-14B</span>
-                </a>
-              </span>
+            <h3 class="comparison-title">Creative & Simulation</h3>
+            <div class="demo-grid">
+                <div class="comparison-card">
+                    <div class="video-compare-container">
+                        <div class="video-wrapper">
+                            <video loop muted playsinline preload="metadata">
+                                <source src="static/demos/creative/edited/video.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="video-overlay">
+                            <video loop muted playsinline preload="metadata">
+                                <source src="static/demos/creative/origin/video.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="video-compare-slider"><div class="slider-handle"></div></div>
+                        <span class="compare-label label-left">Original</span>
+                        <span class="compare-label label-right">PISCO</span>
+                    </div>
+                </div>
 
-              <span class="link-block">
-                <a href="https://huggingface.co/xiangbog/PISCO-1.3B"
-                  class="external-link button is-normal is-rounded is-dark is-model">
-                  <span class="icon">
-                    <i class="fas fa-cube"></i>
-                  </span>
-                  <span>Model-1.3B</span>
-                </a>
-              </span>
+                <div class="comparison-card">
+                    <div class="video-compare-container">
+                        <div class="video-wrapper">
+                            <video loop muted playsinline preload="metadata">
+                                <source src="static/demos/simulation/edited/racing-13.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="video-overlay">
+                            <video loop muted playsinline preload="metadata">
+                                <source src="static/demos/simulation/origin/racing-13.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="video-compare-slider"><div class="slider-handle"></div></div>
+                        <span class="compare-label label-left">Original</span>
+                        <span class="compare-label label-right">PISCO</span>
+                    </div>
+                </div>
             </div>
-            <!-- <span class="link-block anonymity">
-                <a href="https://www.youtube.com/watch?v=OlQDg7EMWrE"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="fab fa-video"></i>
-                  </span>
-                  <span>Video</span>
-                </a>
-              </span>
-              -->
-          </div>
+
+            <h3 class="comparison-title">Reposition & Resize</h3>
+            <div class="demo-grid">
+                <div class="comparison-card">
+                    <div class="video-compare-container">
+                        <div class="video-wrapper">
+                            <video loop muted playsinline preload="metadata">
+                                <source src="static/demos/reposition/edited/bird-12.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="video-overlay">
+                            <video loop muted playsinline preload="metadata">
+                                <source src="static/demos/reposition/origin/bird-12.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="video-compare-slider"><div class="slider-handle"></div></div>
+                        <span class="compare-label label-left">Original</span>
+                        <span class="compare-label label-right">PISCO</span>
+                    </div>
+                </div>
+
+                <div class="comparison-card">
+                    <div class="video-compare-container">
+                        <div class="video-wrapper">
+                            <video loop muted playsinline preload="metadata">
+                                <source src="static/demos/resize/edited/deer-4.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="video-overlay">
+                            <video loop muted playsinline preload="metadata">
+                                <source src="static/demos/resize/origin/deer-4.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="video-compare-slider"><div class="slider-handle"></div></div>
+                        <span class="compare-label label-left">Original</span>
+                        <span class="compare-label label-right">PISCO</span>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <!-- </div> -->
-</div>
+    </section>
 
-<br><br><br>
-
-<!-- Abstract, Pipeline, Results -->
-<!-- <section class="abstract-section">
-      <div class="container is-max-desktop">
-        <h2 class="sub-sub-title has-text-centered">Abstract</h2>
-        <div class="content">
-          <p>
-            The landscape of AI video generation is undergoing a pivotal shift: moving beyond general generation - which
-            relies on exhaustive prompt-engineering and "cherry-picking" - towards fine-grained, controllable generation
-            and high-fidelity post-processing. In professional AI-assisted filmmaking, the core requirement is the
-            ability to perform precise, targeted modifications. A cornerstone of this transition is video instance
-            insertion, which requires inserting a specific instance into existing footage while maintaining scene
-            integrity. Unlike traditional video editing, this task demands several requirements: precise
-            spatial-temporal placement, physically consistent scene interaction (e.g., shadows and reflections), and the
-            faithful preservation of original dynamics - all achieved under minimal user effort. In this paper, we
-            propose PISCO, a video diffusion model for precise video instance insertion with arbitrary sparse keyframe
-            control. PISCO allows users to specify a single keyframe, start-and-end keyframes, or sparse keyframes at
-            arbitrary timestamps, and automatically propagates object appearance, motion, and interaction. To address
-            the severe distribution shift induced by sparse conditioning in pretrained video diffusion models, we
-            introduce Variable-Information Guidance for robust conditioning and Distribution-Preserving Temporal Masking
-            to stabilize temporal generation, together with geometry-aware conditioning for realistic scene adaptation.
-            We further construct PISCO-Bench, a benchmark with verified instance annotations and paired clean background
-            videos, and evaluate performance using both reference-based and reference-free perceptual metrics.
-            Experiments demonstrate that PISCO consistently outperforms strong inpainting and video editing baselines
-            under sparse control, and exhibits clear, monotonic performance improvements as additional control signals
-            are provided.
-          </p>
-        </div>
-      </div>
-    </section> -->
-
-<!-- Video Demos Placeholder -->
-<section class="video-demos-section" id="video-demos">
-  <div class="container is-width-screen">
-    <h2 class="sub-sub-title has-text-centered">Video Demos</h2>
-    <div class="columns is-centered">
-      <div class="column is-full">
-        <video loop muted autoplay playsinline style="width: 100%; border-radius: 10px; margin-bottom: 40px;">
-          <source src="static/PISCO_demo.mp4" type="video/mp4">
-        </video>
-      </div>
-    </div>
-    <h3 class="title is-4 has-text-centered" style="color: #4a4a4a;">Instance insertion</h3>
-    <div class="columns is-multiline is-centered">
-
-      <div class="column is-half">
-        <div class="video-compare-container">
-          <div class="video-wrapper">
-            <video loop muted playsinline preload="metadata" poster="">
-              <source src="static/demos/instance insertion/edited/boat_labubu.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="video-overlay">
-            <video loop muted playsinline preload="metadata" poster="">
-              <source src="static/demos/instance insertion/origin/boat_labubu.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="video-compare-slider">
-            <div class="slider-handle"></div>
-          </div>
-          <span class="compare-label label-left">Original</span>
-          <span class="compare-label label-right">PISCO</span>
-        </div>
-      </div>
-
-      <div class="column is-half">
-        <div class="video-compare-container">
-          <div class="video-wrapper">
-            <video loop muted playsinline preload="metadata" poster="">
-              <source src="static/demos/instance insertion/edited/light.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="video-overlay">
-            <video loop muted playsinline preload="metadata" poster="">
-              <source src="static/demos/instance insertion/origin/light.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="video-compare-slider">
-            <div class="slider-handle"></div>
-          </div>
-          <span class="compare-label label-left">Original</span>
-          <span class="compare-label label-right">PISCO</span>
-        </div>
-      </div>
-
-      <div class="column is-half">
-        <div class="video-compare-container">
-          <div class="video-wrapper">
-            <video loop muted playsinline preload="metadata" poster="">
-              <source src="static/demos/instance insertion/edited/save_lotos.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="video-overlay">
-            <video loop muted playsinline preload="metadata" poster="">
-              <source src="static/demos/instance insertion/origin/save_lotos.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="video-compare-slider">
-            <div class="slider-handle"></div>
-          </div>
-          <span class="compare-label label-left">Original</span>
-          <span class="compare-label label-right">PISCO</span>
-        </div>
-      </div>
-
-      <div class="column is-half">
-        <div class="video-compare-container">
-          <div class="video-wrapper">
-            <video loop muted playsinline preload="metadata" poster="">
-              <source src="static/demos/instance insertion/edited/the_trench_run.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="video-overlay">
-            <video loop muted playsinline preload="metadata" poster="">
-              <source src="static/demos/instance insertion/origin/the_trench_run.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="video-compare-slider">
-            <div class="slider-handle"></div>
-          </div>
-          <span class="compare-label label-left">Original</span>
-          <span class="compare-label label-right">PISCO</span>
-        </div>
-      </div>
-
-      <div class="column is-half">
-        <div class="video-compare-container">
-          <div class="video-wrapper">
-            <video loop muted playsinline preload="metadata" poster="">
-              <source src="static/demos/instance insertion/edited/tower_lulu.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="video-overlay">
-            <video loop muted playsinline preload="metadata" poster="">
-              <source src="static/demos/instance insertion/origin/tower_lulu.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="video-compare-slider">
-            <div class="slider-handle"></div>
-          </div>
-          <span class="compare-label label-left">Original</span>
-          <span class="compare-label label-right">PISCO</span>
-        </div>
-      </div>
-    </div>
-    <br>
-    <h3 class="title is-4 has-text-centered" style="color: #4a4a4a;">Creative</h3>
-    <div class="columns is-multiline is-centered">
-
-      <div class="column is-half">
-        <div class="video-compare-container">
-          <div class="video-wrapper">
-            <video loop muted playsinline preload="metadata" poster="">
-              <source src="static/demos/creative/edited/video.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="video-overlay">
-            <video loop muted playsinline preload="metadata" poster="">
-              <source src="static/demos/creative/origin/video.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="video-compare-slider">
-            <div class="slider-handle"></div>
-          </div>
-          <span class="compare-label label-left">Original</span>
-          <span class="compare-label label-right">PISCO</span>
-        </div>
-      </div>
-
-      <div class="column is-half">
-        <div class="video-compare-container">
-          <div class="video-wrapper">
-            <video loop muted playsinline preload="metadata" poster="">
-              <source src="static/demos/creative/edited/video1.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="video-overlay">
-            <video loop muted playsinline preload="metadata" poster="">
-              <source src="static/demos/creative/origin/video1.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="video-compare-slider">
-            <div class="slider-handle"></div>
-          </div>
-          <span class="compare-label label-left">Original</span>
-          <span class="compare-label label-right">PISCO</span>
-        </div>
-      </div>
-    </div>
-    <br>
-    <h3 class="title is-4 has-text-centered" style="color: #4a4a4a;">Reposition</h3>
-    <div class="columns is-multiline is-centered">
-
-      <div class="column is-half">
-        <div class="video-compare-container">
-          <div class="video-wrapper">
-            <video loop muted playsinline preload="metadata" poster="">
-              <source src="static/demos/reposition/edited/af706af1-a226-3f6f-8d65-b1f4b9457c48.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="video-overlay">
-            <video loop muted playsinline preload="metadata" poster="">
-              <source src="static/demos/reposition/origin/af706af1-a226-3f6f-8d65-b1f4b9457c48.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="video-compare-slider">
-            <div class="slider-handle"></div>
-          </div>
-          <span class="compare-label label-left">Original</span>
-          <span class="compare-label label-right">PISCO</span>
-        </div>
-      </div>
-
-      <div class="column is-half">
-        <div class="video-compare-container">
-          <div class="video-wrapper">
-            <video loop muted playsinline preload="metadata" poster="">
-              <source src="static/demos/reposition/edited/bird-12.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="video-overlay">
-            <video loop muted playsinline preload="metadata" poster="">
-              <source src="static/demos/reposition/origin/bird-12.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="video-compare-slider">
-            <div class="slider-handle"></div>
-          </div>
-          <span class="compare-label label-left">Original</span>
-          <span class="compare-label label-right">PISCO</span>
-        </div>
-      </div>
-
-      <div class="column is-half">
-        <div class="video-compare-container">
-          <div class="video-wrapper">
-            <video loop muted playsinline preload="metadata" poster="">
-              <source src="static/demos/reposition/edited/cattle-9.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="video-overlay">
-            <video loop muted playsinline preload="metadata" poster="">
-              <source src="static/demos/reposition/origin/cattle-9.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="video-compare-slider">
-            <div class="slider-handle"></div>
-          </div>
-          <span class="compare-label label-left">Original</span>
-          <span class="compare-label label-right">PISCO</span>
-        </div>
-      </div>
-
-      <div class="column is-half">
-        <div class="video-compare-container">
-          <div class="video-wrapper">
-            <video loop muted playsinline preload="metadata" poster="">
-              <source src="static/demos/reposition/edited/hat-1.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="video-overlay">
-            <video loop muted playsinline preload="metadata" poster="">
-              <source src="static/demos/reposition/origin/hat-1.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="video-compare-slider">
-            <div class="slider-handle"></div>
-          </div>
-          <span class="compare-label label-left">Original</span>
-          <span class="compare-label label-right">PISCO</span>
-        </div>
-      </div>
-
-      <div class="column is-half">
-        <div class="video-compare-container">
-          <div class="video-wrapper">
-            <video loop muted playsinline preload="metadata" poster="">
-              <source src="static/demos/reposition/edited/truck-14.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="video-overlay">
-            <video loop muted playsinline preload="metadata" poster="">
-              <source src="static/demos/reposition/origin/truck-14.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="video-compare-slider">
-            <div class="slider-handle"></div>
-          </div>
-          <span class="compare-label label-left">Original</span>
-          <span class="compare-label label-right">PISCO</span>
-        </div>
-      </div>
-    </div>
-    <br>
-    <h3 class="title is-4 has-text-centered" style="color: #4a4a4a;">Resize</h3>
-    <div class="columns is-multiline is-centered">
-
-      <div class="column is-half">
-        <div class="video-compare-container">
-          <div class="video-wrapper">
-            <video loop muted playsinline preload="metadata" poster="">
-              <source src="static/demos/resize/edited/bird-6.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="video-overlay">
-            <video loop muted playsinline preload="metadata" poster="">
-              <source src="static/demos/resize/origin/bird-6.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="video-compare-slider">
-            <div class="slider-handle"></div>
-          </div>
-          <span class="compare-label label-left">Original</span>
-          <span class="compare-label label-right">PISCO</span>
-        </div>
-      </div>
-
-      <div class="column is-half">
-        <div class="video-compare-container">
-          <div class="video-wrapper">
-            <video loop muted playsinline preload="metadata" poster="">
-              <source src="static/demos/resize/edited/deer-4.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="video-overlay">
-            <video loop muted playsinline preload="metadata" poster="">
-              <source src="static/demos/resize/origin/deer-4.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="video-compare-slider">
-            <div class="slider-handle"></div>
-          </div>
-          <span class="compare-label label-left">Original</span>
-          <span class="compare-label label-right">PISCO</span>
-        </div>
-      </div>
-    </div>
-    <br>
-    <h3 class="title is-4 has-text-centered" style="color: #4a4a4a;">Simulation</h3>
-    <div class="columns is-multiline is-centered">
-
-      <div class="column is-half">
-        <div class="video-compare-container">
-          <div class="video-wrapper">
-            <video loop muted playsinline preload="metadata" poster="">
-              <source src="static/demos/simulation/edited/b29377e0-83e8340a.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="video-overlay">
-            <video loop muted playsinline preload="metadata" poster="">
-              <source src="static/demos/simulation/origin/b29377e0-83e8340a.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="video-compare-slider">
-            <div class="slider-handle"></div>
-          </div>
-          <span class="compare-label label-left">Original</span>
-          <span class="compare-label label-right">PISCO</span>
-        </div>
-      </div>
-
-      <div class="column is-half">
-        <div class="video-compare-container">
-          <div class="video-wrapper">
-            <video loop muted playsinline preload="metadata" poster="">
-              <source src="static/demos/simulation/edited/racing-13.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="video-overlay">
-            <video loop muted playsinline preload="metadata" poster="">
-              <source src="static/demos/simulation/origin/racing-13.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="video-compare-slider">
-            <div class="slider-handle"></div>
-          </div>
-          <span class="compare-label label-left">Original</span>
-          <span class="compare-label label-right">PISCO</span>
-        </div>
-      </div>
-    </div>
-    <br>
-  </div>
-  <br>
-  </div>
-  <br>
-  </div>
-</section>
-
-<!-- BibTeX Citation Section -->
-<section class="citation-section">
-  <div class="container is-max-desktop">
-    <h2 class="sub-sub-title has-text-centered">Citation</h2>
-    <div class="citation-container">
-      <div class="citation-header">
-        <i class="fas fa-quote-left"></i>
-        <span>BibTeX</span>
-        <button class="copy-button" onclick="copyToClipboard()">
-          <i class="fas fa-copy"></i>
-          <span>Copy</span>
-        </button>
-      </div>
-      <pre class="citation-text" id="citation-text">@article{gao2026pisco,
+    <!-- Citation Section -->
+    <section class="section-dark">
+        <div class="container narrow">
+            <h2>Citation</h2>
+            <div class="citation-container">
+                <button class="copy-button" onclick="copyToClipboard()"><span>Copy</span></button>
+                <pre id="citation-text"><code>@article{gao2026pisco,
   title={PISCO: Precise Video Instance Insertion with Sparse Control},
   author={Gao, Xiangbo and Li, Renjie and Chen, Xinghao and Wu, Yuheng and Feng, Suofei and Yin, Qing and Tu, Zhengzhong},
   journal={arXiv preprint arXiv:2602.08277},
   year={2026}
-}</pre>
-    </div>
-  </div>
-</section>
-</section>
+}</code></pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>PISCO &middot; Texas A&M University</p>
+    </footer>
 </div>
+
+<script>
+    // Unmute on click for the demo video
+    const piscoDemo = document.getElementById('pisco-demo');
+    if (piscoDemo) {
+        piscoDemo.addEventListener('click', function() {
+            if (this.muted) {
+                this.muted = false;
+                this.controls = true;
+                this.play();
+            }
+        });
+    }
+</script>
