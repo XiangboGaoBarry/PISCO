@@ -118,6 +118,47 @@ body {
     border-color: #bbb;
 }
 
+.hero-news {
+    width: min(100%, 560px);
+    margin: -16px auto 48px;
+    padding: 16px 24px;
+    text-align: left;
+    border: 1px solid #d2d2d7;
+    border-radius: 16px;
+}
+
+.hero-news-title {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #86868b;
+    margin-bottom: 8px;
+}
+
+.hero-news ul {
+    list-style: none;
+}
+
+.hero-news li {
+    display: flex;
+    gap: 12px;
+    font-size: 0.9rem;
+    color: #1d1d1f;
+    line-height: 1.8;
+}
+
+.news-date {
+    flex: 0 0 auto;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    color: #176347;
+}
+
+.hero-news a {
+    color: #176347;
+}
+
 .hero-authors {
     font-size: 0.9rem;
     font-weight: 400;
